@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>incriment</title>
+   
+</head>
+<body>
+   <h1 id="display"></h1>
+   <button onclick="countNumber()">click me</button>
+   <button onclick="dicriment()">dicriment</button>
+   <script>
+    count=0;
+     document.getElementById("display").innerHTML=count;
+    function countNumber(){
+        // count=count+2;
+        count++;
+        document.getElementById("display").innerHTML=count;
+
+        
+    }
+    function dicriment(){
+        // count=count-1;
+        count--;
+        document.getElementById("display").innerHTML=count;
+    }
+   </script>
+</body>
+</html>

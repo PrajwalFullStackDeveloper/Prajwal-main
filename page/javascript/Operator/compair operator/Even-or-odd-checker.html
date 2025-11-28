@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or odd ckecker </title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-continer{
+            width: 30vw;
+            height: 60vh;
+              display: flex;
+              flex-direction: column;
+            align-items: center;
+            justify-content: center;
+           box-shadow: 0px 4px 30px 0px  black;
+        
+        }
+        input{
+            width: 25vw;
+            height: 5vh;
+        }
+        button{
+            width: 25vw;
+            height: 6vh;
+            background-color: blueviolet;
+            border: none;
+        }
+        p{
+            width: 25vw;
+            height: 10vh;
+              box-shadow: 0px 4px 30px 0px  black;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: rgba(89, 149, 89, 0.459);
+        }
+        label{
+            margin-right: 55%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-continer">
+        <h1>Even or odd checker</h1><br>
+        <label>Enter your age</label>
+        <input id="input" type="number"><br>
+        <button onclick="odd()">Check Number</button><br>
+        <p id="display"></p>
+    </div>
+    <script>
+        function odd(){
+            let numb=document.getElementById("input").value;
+            if((numb%2)==0){
+                document.getElementById("display").innerHTML=numb+"is Even"
+            }
+            else{
+                  document.getElementById("display").innerHTML= numb+"is odd"
+            }
+            document.getElementById("input").value="";
+        }
+    </script>
+</body>
+</html>

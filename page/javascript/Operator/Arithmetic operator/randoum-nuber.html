@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reandum</title>
+    <style>
+        button{
+            width: 10vw;
+            height: 5vh;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="number"></h1>
+    <button onclick="call()"></button>
+    <script>
+        function call(){
+            let number=Math.random();
+            let num=Math.floor(number*10);
+            document.getElementById("number").innerHTML=num;
+        }
+    </script>
+</body>
+</html>

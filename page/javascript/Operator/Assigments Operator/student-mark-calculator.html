@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(240, 255, 209);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            height: 60vh;
+            width: 35vw;
+            background-color: rgb(240, 255, 209);
+            box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.147);
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            flex-direction: column;
+            border: 1px solid rgb(227, 255, 210);
+        }
+        input{
+            height: 40px;
+            width: 70%;
+        }
+        button{
+            height: 45px;
+            width: 45%;background-color: rgb(57, 157, 48);
+            color: white;
+            font-size: 20px;
+            border-radius: 10px;
+            border: none;
+        }
+        p{
+            height: 90px;
+            width: 75%;
+            background-color: rgb(240, 255, 209);
+            box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.147);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h2{
+            height: 50px;
+            width: 300px;
+            background-color: rgb(195, 195, 195);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            color: rgb(0, 12, 103);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="box">
+
+            <h1>Student Mark Calculator</h1><br><br>
+           <div>
+            <h2>Math Mark :  40 </h2>
+            <h2>Science Mark   :  35</h2>
+           </div>
+            <br><br>
+            <button onclick="submit()">Add science mark</button>
+            <br>
+            <p id="display"></p>
+        </div>
+    </div>
+
+
+    <script>
+
+
+        function submit() {
+            let math = 40
+            let sci =35
+
+            math += sci;
+
+            document.getElementById("display").innerHTML = math;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-container {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main {
+            height: 80%;
+            width: 35%;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-evenly;
+            box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.233);
+        }
+
+        p {
+            height: 70px;
+            background-color: rgb(255, 255, 255);
+            width: 40%;
+            display: flex;
+            justify-content: center; box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.233);
+            align-items: center;border-radius: 10px;
+            border: 1px solid rgb(157, 181, 157);
+            font-size: 20px;
+
+        }
+
+        .check-answer {
+            height: 40px;
+            border: none;
+            width: 40%;
+            border-radius: 5px;
+            background-color: rgb(238, 228, 228);
+            font-size: 20px;  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.233);
+            background-color:green;
+            color: white;
+        }
+
+        .next-question {
+            height: 40px;
+            width: 40%;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.233);
+            background-color:green;
+            color: white;
+        }
+
+        input {
+            width: 68%;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+        <div class="main">
+            <h1>Multiplication Quiz</h1>
+            <!-- question -->
+            <b id="question"></b>
+            <!-- input -->
+            <input type="text" id="input-one" placeholder="Enter the Answer...">
+            <!-- first button -->
+            <button class="check-answer" onclick="answer()"> Check Answer</button>
+            <!-- display -->
+            <p id="second-display"></p>
+            <!-- second button -->
+            <button class="next-question" onclick="question()">Next Question</button>
+        </div>
+
+
+    </div>
+    <script>
+
+        let num1 = Math.random() * 10;
+        let num2 = Math.random() * 10;
+
+        num1 = Math.floor(num1);
+        num2 = Math.floor(num2);
+        let num3 = num1 * num2;
+        document.getElementById("question").innerHTML = num1 + " x " + num2 + "=?"
+
+
+        // function
+        function answer() {
+
+            let answer = document.getElementById("input-one").value;
+            let result = answer == num3;
+            document.getElementById("second-display").innerHTML = result;
+
+
+        }
+        function question(){
+            location.reload()
+        }
+       
+    </script>
+
+
+</body>
+
+</html>
