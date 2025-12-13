@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logical opreter</title>
+    <style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+        .main-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 30vw;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 20px 0px rgb(67, 64, 64);
+        }
+
+        input {
+            width: 25vw;
+            height: 5vh;
+        }
+
+        .one {
+            margin-right: 50%;
+        }
+
+        .two {
+            margin-right: 68%;
+        }
+
+        button {
+            width: 25vw;
+            height: 5vh;
+            background-color: rgb(58, 95, 197);
+            color: white;
+        }
+
+        p {
+            width: 25vw;
+            height: 8vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 20px 0px rgb(83, 75, 75);
+            color: black;
+        }
+        @media (min-width:300px) and ( max-width:431px){
+              body{
+        margin: 0;
+        padding: 0;
+    }
+             .main-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90vw;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            box-shadow: 0px 4px 20px 0px rgb(67, 64, 64);
+        }
+
+        input {
+            width: 70vw;
+            height: 5vh;
+        }
+
+        .one {
+            margin-right: 50%;
+        }
+
+        .two {
+            margin-right: 68%;
+        }
+
+        button {
+            width: 70vw;
+            height: 5vh;
+            background-color: rgb(58, 95, 197);
+            color: white;
+        }
+
+        p {
+            width: 70vw;
+            height: 8vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 20px 0px rgb(83, 75, 75);
+            color: black;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h1>Welcome Back</h1>
+            <label class="one">Email or Username</label>
+            <input id="input" type="text"><br>
+            <label class="two">password</label>
+            <input id="input-one" type="text"><br>
+            <button onclick="login()">Login</button><br>
+            <p id="display"></p>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+
+
+            let username = "prajwal"
+            let email = "prajwalnakade8759@gmail.com"
+            let password = "1234"
+
+            userinput = document.getElementById("input").value;
+            passwordone = document.getElementById("input-one").value;
+            if ((username == userinput || email == userinput && password == passwordone)) {
+                document.getElementById("display").innerHTML = "Login successfull"
+            }
+            else {
+
+                document.getElementById("display").innerHTML = "Login Unsuccessfull"
+            }
+        }
+    </script>
+</body>
+
+</html>
