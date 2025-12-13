@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-container {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(255, 220, 198);
+            ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            height: 60vh;
+            width: 35vw;
+            background-color: rgba(255, 187, 144, 0.567);
+            box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.147);
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            flex-direction: column;
+            border: 10px  dotted rgb(255, 115, 0);
+           
+           
+
+        }
+
+      
+       
+
+
+        input {
+            height: 40px;
+            width: 70%;
+        }
+
+        button {
+            height: 45px;
+            width: 45%;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        p {
+            height: 90px;
+            width: 75%;
+            background-color: rgb(255, 187, 144);
+            box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.147);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="box">
+
+            <h1>Employ Salary Discount</h1><br><br>
+            <div>
+                <h2> : Orignal Price ₹ 2000</h2>
+                <h2> : Discount 50 %</h2>
+            </div>
+            <br><br>
+            <button onclick="submit()">Apply Discount</button>
+            <br>
+            <p id="display"></p>
+        </div>
+    </div>
+
+
+    <script>
+
+
+        function submit() {
+            let math = 2000;
+            let sci = 2;
+
+            math /= sci;
+
+            document.getElementById("display").innerHTML = math;
+        }
+    </script>
+</body>
+
+</html>

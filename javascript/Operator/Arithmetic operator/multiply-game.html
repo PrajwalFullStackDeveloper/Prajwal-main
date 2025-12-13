@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplay Game</title>
+</head>
+<body>
+    <h1 id="number-1"></h1>
+     <h1 id="number-2"></h1>
+     <h1 id="number-3"></h1>
+      <h1 id="result"></h1>
+    <script>
+        let num=Math.random()
+        let a=Math.floor(num*10) ;
+          let num1=Math.random()
+        let a1=Math.floor( num*10);
+        let b=a*a1;
+        document.getElementById("number-1").innerHTML=a;
+        document.getElementById("number-2").innerHTML=a1;
+        document.getElementById("number-3").innerHTML=b;
+        let userAnswer= prompt(a +"x"+a1+"=?")
+       
+        let result =userAnswer==b;
+         document.getElementById("result").innerHTML=result;
+        
+       
+    </script>
+</body>
+</html>

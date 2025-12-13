@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart discounnt</title>
+    <style>
+        .main-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 30vw;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 20px 0px rgb(183, 174, 174);
+        }
+
+        input {
+            width: 25vw;
+            height: 5vh;
+        }
+
+        button {
+            width: 10vw;
+            height: 5vh;
+        }
+
+        p {
+            width: 20vw;
+            height: 8vh;
+            box-shadow: 0px 4px 20px 0px rgb(183, 174, 174);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h3>Cart Discount Checker</h3>
+            <label>Cart total (inr):</label>
+            <input id="input" type="number"><br>
+            <input type="checkbox" id="checkbox">
+            <label>Is a member</label>
+            <button onclick="cart()">Check Discount</button>
+            <p id="display"></p>
+        </div>
+    </div>
+    <script>
+        function cart(){
+
+       
+        const Cart = 100;
+        let value=document.getElementById("checkbox").checked;
+         let cartD=Number(document.getElementById("input").value) ;
+         if(Cart<=cartD && value){
+            document.getElementById("display").innerHTML=" Discount applies"
+
+         }
+         else{
+             document.getElementById("display").innerHTML=" Discount not applies"
+         }
+         
+
+ }
+    </script>
+</body>
+
+</html>

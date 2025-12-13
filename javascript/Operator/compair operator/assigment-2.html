@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation</title>
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+        .main-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+
+        }
+
+        .heading-container {
+            width: 100vw;
+            height: 10vh;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .container {
+
+            width: 100vw;
+            height: 10vh;
+            display: flex;
+            flex-direction: row;
+
+            justify-content: space-evenly;
+         
+        }
+
+        .button-container {
+            width: 100vw;
+            height: 6vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .table-container {
+            width: 100vw;
+            height: 74vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        table {
+
+            width: 60%;
+            border: solid 1px black;
+            border-collapse: collapse;
+            text-align: center;
+
+        }
+
+        td {
+            border: 1px solid black;
+            height: 40px;
+            width: 40vw;
+        }
+
+        th {
+            border: 1px solid black;
+            height: 40px;
+            width: 40vw;
+            background-color: rgb(0, 162, 255);
+            font-size: 20px;
+            color: white;
+        }
+
+        button {
+            width: 30vw;
+            height: 5vh;
+            background-color:lime;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .input-container {
+            width: 18vw;
+            height: 8vh;
+            
+        }
+
+        input {
+            width: 17vw;
+            border-radius: 5px;
+            border: 1px solid;
+        }
+        .pass{
+            background-color: darkcyan;
+        }
+        .per{
+
+background-color: cornsilk;
+        }
+        .mar{
+            background-color: cornflowerblue;
+        }
+        .number{
+            background-color: rgb(18, 218, 225);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="heading-container"><b>Mark of Student</b></div>
+        <div class="container">
+
+            <div class="input-container">
+                <label>1.Math</label><br>
+                <input id="input" type="number">
+            </div>
+            <div class="input-container">
+                <label>2.Heat Transfer</label>
+                <input id="input-one" type="number">
+            </div>
+            <div class="input-container">
+                <label>3.Design of Machine</label>
+                <input id="input-two" type="number">
+            </div>
+            <div class="input-container">
+                <label>4.Energy conversion</label>
+                <input id="input-three" type="number">
+            </div>
+            <div class="input-container">
+                <label>5.Auto Mobile</label>
+                <input id="input-four" type="number">
+            </div>
+
+        </div>
+        <div class="button-container"><button onclick="calculation()">Mark of Student</button></div>
+        <div class="table-container">
+            <table id="table">
+                <tr>
+                    <th>No</th>
+                    <th>Subject</th>
+                    <th>Mark</th>
+                </tr>
+                <tr>
+                    <td class="number">1</td>
+                    <td  class="number">Math</td>
+                    <td  class="number" id="mark"></td>
+                </tr>
+                <tr>
+                    <td class="number">2</td>
+                    <td  class="number">Heat transfer</td>
+                    <td  class="number" id="mark-one"></td>
+                </tr>
+                <tr>
+                    <td class="number">3</td>
+                    <td  class="number">Design Of Machine</td>
+                    <td  class="number" id="mark-two"></td>
+                </tr>
+                <tr>
+                    <td class="number">4</td>
+                    <td  class="number">Energy Conversion</td>
+                    <td  class="number" id="mark-three"></td>
+                </tr>
+                <tr>
+                    <td class="number">5</td>
+                    <td  class="number">Auto Mobile </td>
+                    <td class="number" id="mark-four"></td>
+                </tr>
+                <tr>
+                    <td class="mar" colspan="2">Total mark</td>
+                    <td class="mar" id="total-mark"></td>
+                </tr>
+                <tr>
+                    <td class="per" colspan="2">percent</td>
+                    <td class="per"  id="percent"></td>
+                </tr>
+                <tr>
+                    <td class="pass" colspan="2">Result</td>
+                    <td class="pass" id="result"></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <script>
+        function calculation() {
+            let num = Number(document.getElementById("input").value);
+            num1 = Number(document.getElementById("input-one").value);
+            num2 = Number(document.getElementById("input-two").value);
+            num3 = Number(document.getElementById("input-three").value);
+            num4 = Number(document.getElementById("input-four").value);
+
+            document.getElementById("mark").innerHTML = num;
+            document.getElementById("mark-one").innerHTML = num1;
+            document.getElementById("mark-two").innerHTML = num2;
+            document.getElementById("mark-three").innerHTML = num3;
+            document.getElementById("mark-four").innerHTML = num4;
+
+            totalmark=num+num1+num2+num3+num4;
+
+            calcu=totalmark/500;
+            percent=calcu*100;
+
+            document.getElementById("total-mark").innerHTML=totalmark;
+             document.getElementById("percent").innerHTML=percent+"%";
+              if(percent>=35){
+                document.getElementById("result").innerHTML=" Pass"
+              }
+              else{
+                 document.getElementById("result").innerHTML=" Fail"
+              }
+        }
+    </script>
+</body>
+
+</html>
