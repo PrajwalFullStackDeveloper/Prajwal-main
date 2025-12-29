@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp</title>
+    <style>
+        .main-container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            width: 30%;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 20px 4px rgb(168, 158, 158);
+        }
+        button{
+width: 90%;
+            height: 8%;
+
+        }
+        input{
+            width: 90%;
+            height: 8%;
+        }
+        p{
+          width: 90%;
+            height: 15%; 
+             display: flex;
+           
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 20px 4px rgb(168, 158, 158);  
+        }
+        span{
+            background-color: rgb(177, 70, 70);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h4>Temp Range Chacker</h4>
+            <label>Enter temp(c)</label>
+            <input id="input" type="number"> <br>
+            <button onclick="temp()">Check temp</button>
+            <p id="display"></p>
+        </div>
+    </div>
+    <script>
+        function temp(){
+            let a=document.getElementById("input").value;
+            let display="";
+            let bgcolor="";
+            let fontcolor="";
+            if(a>=40){
+                display="Very Hot"
+                 bgcolor="red";
+             fontcolor="black";
+
+            }
+            else if(a>=30){
+                display="Hot"
+                 bgcolor="rgb(177, 70, 70)";
+             fontcolor="black";
+            }
+             else if(a>=20  ){
+                display="warm"
+            }
+             else if(a>=10){
+                display="cool"
+            }
+             else if(a>=0){
+                display="Cold"
+            }
+            else{
+                display="Freezing"
+            }
+            document.getElementById("input").value=""
+            document.getElementById("display").innerHTML=display;
+            document.getElementById("display").style.backgroundColor= bgcolor;
+            document.getElementById("display").style.Color= fontcolor;
+
+        }
+    </script>
+</body>
+</html>

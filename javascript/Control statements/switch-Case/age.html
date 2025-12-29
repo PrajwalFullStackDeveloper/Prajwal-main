@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Pricing</title>
+</head>
+<body>
+    <script>
+        let age=prompt()
+        switch(true){
+            case((age>0 )&&(age<=12)):
+            alert("child");
+            break;
+
+             case((age>=13 )&&(age<=19)):
+            alert("Teen  RS 150");
+            break;
+
+            case((age>=20 )&&(age<=59)):
+            alert("Adult  RS 250");
+            break;
+
+            case((age>=60 )):
+            alert("Senior  RS 120");
+            break;
+            default:
+                alert("invalide")
+        }
+    </script>
+</body>
+</html>

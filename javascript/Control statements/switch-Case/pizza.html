@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza</title>
+</head>
+<body>
+    <button onclick=" small()">Small pizaa  150</button><br><br>
+    <button onclick=" medium()" > medium pizaa  250</button><br><br>
+    <button onclick="large()">large pizaa  350</button><br><br>
+    <p id="display"></p>
+    <script>
+        let pizzaprice=0;
+        let select=""
+        function getpizza(){
+          
+       switch(true){
+        case(pizzaprice==150):
+          select="you selected  small pizza";
+        
+        break;
+         case(pizzaprice==250):
+          select="you selected  medium pizza" ;
+        
+        break;
+        default:
+         case(pizzaprice==350):
+          select="you selected  large pizza" ;
+        
+       
+       }
+        document.getElementById("display").innerHTML=select;
+    }
+      
+       function small(){
+        pizzaprice=150;
+        getpizza()
+       }
+        function medium(){
+        pizzaprice=250;
+        getpizza()
+       }
+        function large(){
+        pizzaprice=350;
+        getpizza()
+       }
+       
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login Account</title>
+    <style>
+        .main-container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            width: 30%;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+             align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 20px 0px rgb(232, 212, 212);
+        }
+        input{
+            width: 90%;
+            height: 8%;
+        }
+        button{
+            width: 90%;
+            height: 9%;
+            background-color: green;
+        }
+        h3{
+             width: 90%;
+            height: 18%;
+           display: flex;
+            
+             align-items: center;
+            justify-content: center;
+            font-size: 24px;
+          
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h3>Log in to your account</h3>
+            <label>User name</label>
+            <input id="input" type="text">
+            <label>Password</label>
+            <input id="input-one" type="number"><br>
+            <button onclick="check()">Log in </button>
+            <h3 id="display"></h3>
+        </div>
+    </div>
+    <script>
+function check(){
+    let username= document.getElementById("input").value;
+    let password=document.getElementById("input-one").value
+    let result="";
+   
+        
+    if(username=="prajwal"){
+        if(password==1234){
+            result="Log in successful"
+        }
+        else{
+            result="incorect Password"
+        }
+    }
+    else{
+        result="invalid username"
+    }
+document.getElementById("display").innerHTML=result;
+
+}
+    </script>
+</body>
+</html>
