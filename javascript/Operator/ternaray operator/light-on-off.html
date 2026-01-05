@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+ 
+        .main {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+ 
+        .box {
+            height: 90%;
+            width: 35%;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.277);
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+        }
+ 
+        .image {
+            height: 30%;
+            width: 35%;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.277);
+        }
+ 
+        .button-group {
+            height: 20%;
+            width: 90%;
+            background-color: rgba(64, 224, 208, 0);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+ 
+        button {
+            height: 40%;
+            width: 40%;
+            border-radius: 5%;
+            border: 1px solid rgb(255, 255, 255);
+            font-size: 20px;
+ 
+        }
+ 
+        p {
+            height: 40%;
+            width: 50%;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5%;
+ 
+        }
+ 
+        img {
+            height: 98%;
+            width: 98%;
+            border-radius: 100%;
+        }
+ 
+        footer {
+            height: 20%;
+            width: 90%;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.277);
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+ 
+        }
+ 
+        .display-block {
+            display: none;
+        }
+        .light-on {
+    background-color: rgba(5, 5, 113, 0.79); /* warm light */
+}
+
+.light-off {
+    background-color: rgb(108, 102, 102);
+}
+
+    </style>
+</head>
+ 
+<body>
+ 
+    <div class="main" id="main">
+        <div class="box" id="box">
+            <h2 id="htwo">Light ON / OFF toggle</h2>
+            <label id="label" for="">A clean interactive demonstration of light switching</label>
+            <div class="image"><img id="bulb" src="" alt="" class="imgoff"></div>
+            <div class="button-group">
+                <button onclick="toggleLight()" id="button-one">Turn on</button>
+<button class="display-block" onclick="toggleLight()" id="button-two">Turn off</button>
+
+                <p id="display">.......</p>
+            </div>
+            <footer id="footer">
+                <b>How to use</b>
+                <br>
+                <div>Click the button above to toggle the light ,between ON <br>
+                    And Off states. Observe how the bulb changes visually <br>and how pages adapts to each state.</div>
+            </footer>
+ 
+        </div>
+    </div>
+       
+   <script>
+   
+    
+    let isOn = false;
+
+    const bulb = document.getElementById("bulb");
+    const btnOn = document.getElementById("button-one");
+    const btnOff = document.getElementById("button-two");
+    const display = document.getElementById("display");
+    const main = document.getElementById("main");
+    const box = document.getElementById("box");
+
+    const onImg = "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSaid_4RYtltEqLboG7VbIlPnRPtU0KobWttQTjqVKW51zVuyVR";
+    const offImg = "https://cliply.co/wp-content/uploads/2019/06/371906590_RESPONSIVE_SMARTPHONE_400.png";
+
+    function toggleLight() {
+        isOn = !isOn;
+
+        // bulb & text
+        bulb.src = isOn ? onImg : offImg;
+        display.innerText = isOn ? "Light is ON 💡" : "Light is OFF";
+
+        // button toggle
+        btnOn.classList.toggle("display-block", isOn);
+        btnOff.classList.toggle("display-block", !isOn);
+
+        // background change
+        main.classList.toggle("light-on", isOn);
+        main.classList.toggle("light-off", !isOn);
+
+        // optional glowing box
+        box.style.boxShadow = isOn
+            ? "0px 4px 40px rgba(255, 193, 7, 0.8)"
+            : "0px 4px 30px rgba(0, 0, 0, 0.277)";
+    }
+
+    // default OFF state
+    bulb.src = offImg;
+    main.classList.add("light-off");
+
+
+</script>
+
+</body>
+ 
+</html>
+ 

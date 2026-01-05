@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or Odd Checker</title>
+    <style>
+        .main-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 30%;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 20px 0px rgb(189, 183, 183);
+        }
+
+        input {
+            width: 90%;
+            height: 5%;
+        }
+
+        p {
+            width: 90%;
+            height: 15%;
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 20px 0px rgb(189, 183, 183);
+
+        }
+        button{
+            width: 90%;
+            height: 10%;
+            background-color: rgb(152, 231, 152);
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h1>Even or Odd Checker</h1>
+            <input id="input" type="number"><br>
+            <button onclick="check()"> Check</button>
+            <p id="display"></p>
+        </div>
+    </div>
+    <script>
+        function check() {
+            num =Number(document.getElementById("input").value);
+            result=(num % 2)?"odd" : "Even";
+            document.getElementById("display").innerHTML=result;
+
+        }
+    </script>
+</body>
+
+</html>
